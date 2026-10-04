@@ -1,0 +1,36 @@
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2
+
+[mcp_servers.jira-read-mcp]
+command = "node"
+args = ["--env-file=.env", "dist/index.js"]
+cwd = "${pathToYourFolder}/.codex/tools/jira-read-mcp"
+
+[mcp_servers.confluence-read-mcp]
+command = "node"
+args = ["--env-file=.env", "dist/index.js"]
+cwd = "${pathToYourFolder}/.codex/tools/confluence-read-mcp"
+
+[mcp_servers.confluence-read-mcp.tools.get_masked_page]
+approval_mode = "approve"
+
+[mcp_servers.playwright]
+command = "npx.cmd"
+args = ["-y", "@playwright/mcp@0.0.79", "--browser", "chromium", "--user-data-dir", "${pathToYourFolder}/artifacts/playwright-profile"]
+cwd = "${pathToYourFolder}"
+env = { PLAYWRIGHT_BROWSERS_PATH = "${pathToYourFolder}/artifacts/playwright-browsers" }
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+
+[mcp_servers.jira-write-mcp]
+command = "node"
+args = ["${pathToYourFolder}/.codex/scripts/jira-write-wrapper.mjs"]
+cwd = "${pathToYourFolder}"
+enabled_tools = ["jira_get", "jira_post"]
+default_tools_approval_mode = "approve"
+startup_timeout_sec = 30
+tool_timeout_sec = 60

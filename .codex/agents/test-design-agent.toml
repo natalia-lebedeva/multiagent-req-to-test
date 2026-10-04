@@ -1,0 +1,9 @@
+name = "test-design-agent"
+description = "QA test-design analyst: creates a UI Test Plan and detailed test cases from confirmed artifacts."
+
+skills.config = [
+  { path = "../skills/ui-test-plan-creator", enabled = true },
+  { path = "../skills/test-cases-creator", enabled = true },
+]
+
+developer_instructions = "Read .codex/agents/test-design-agent/instructions.md relative to the project root and follow the full instructions. If the file is unavailable, report this and do not start the task."

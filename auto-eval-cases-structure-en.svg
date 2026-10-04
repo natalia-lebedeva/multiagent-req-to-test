@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="330" viewBox="0 0 3840 330" role="img" aria-labelledby="title desc">
+  <title id="title">Automated evaluation workflow</title>
+  <desc id="desc">The evaluation runner loads a dataset, prepares inputs, runs the QA agent, collects its response and artifacts, evaluates the result, and saves a final report. The evaluator also receives the case expectations and references.</desc>
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #94a3b8; stroke-width: 3; rx: 32; }
+      .blue { fill: #dbeafe; stroke: #2563eb; stroke-width: 6; }
+      .purple { fill: #f3e8ff; stroke: #7c3aed; stroke-width: 6; }
+      .text { font: 28px 'Segoe UI', Arial, sans-serif; fill: #1f2937; text-anchor: middle; }
+      .head { font-weight: 700; }
+      .arrow { fill: none; stroke: #334155; stroke-width: 5; marker-end: url(#arrow); }
+      .loop { fill: none; stroke: #334155; stroke-width: 5; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M1 1l10 5-10 5z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="3840" height="330" fill="#fff"/>
+
+  <rect class="box" x="20" y="50" width="510" height="190"/>
+  <text class="text" x="275" y="90"><tspan class="head">1. Dataset</tspan><tspan x="275" dy="40">golden-dataset.json</tspan><tspan x="275" dy="36">input • expected • forbidden • references</tspan></text>
+
+  <rect class="box blue" x="620" y="30" width="480" height="230"/>
+  <text class="text" x="860" y="72"><tspan class="head">2. Runner: setup</tspan><tspan x="860" dy="40">eval-runner.ts</tspan><tspan x="860" dy="36">select case • validate inputs</tspan><tspan x="860" dy="36">create artifacts</tspan></text>
+
+  <rect class="box" x="1190" y="50" width="510" height="190"/>
+  <text class="text" x="1445" y="90"><tspan class="head">3. QA Agent: run</tspan><tspan x="1445" dy="40">Codex + AGENTS.md</tspan><tspan x="1445" dy="36">Skills + MCP</tspan><tspan x="1445" dy="36">complete the task</tspan></text>
+
+  <rect class="box" x="1790" y="50" width="450" height="190"/>
+  <text class="text" x="2015" y="90"><tspan class="head">4. Agent result</tspan><tspan x="2015" dy="40">Agent response</tspan><tspan x="2015" dy="36">Created artifacts</tspan></text>
+
+  <rect class="box purple" x="2330" y="30" width="520" height="230"/>
+  <text class="text" x="2590" y="72"><tspan class="head">5. Evaluator: check</tspan><tspan x="2590" dy="40">evaluator.ts</tspan><tspan x="2590" dy="36">sends data to LLM:</tspan><tspan x="2590" dy="36">Expected • Forbidden • References</tspan></text>
+
+  <rect class="box purple" x="2940" y="30" width="500" height="230"/>
+  <text class="text" x="3190" y="72"><tspan class="head">6. Case check result</tspan><tspan x="3190" dy="40">evaluator.ts</tspan><tspan x="3190" dy="36">PASS / FAIL</tspan><tspan x="3190" dy="36">reason for each check</tspan></text>
+
+  <rect class="box blue" x="3530" y="30" width="290" height="230"/>
+  <text class="text" x="3675" y="72"><tspan class="head">7. Report</tspan><tspan x="3675" dy="40">eval-runner.ts</tspan><tspan x="3675" dy="36">pass rate • gate</tspan><tspan x="3675" dy="36">eval_results.json</tspan></text>
+
+  <path class="arrow" d="M530 145h80"/>
+  <path class="arrow" d="M1100 145h80"/>
+  <path class="arrow" d="M1700 145h80"/>
+  <path class="arrow" d="M2240 145h80"/>
+  <path class="arrow" d="M2850 145h80"/>
+  <path class="arrow" d="M3440 145h80"/>
+  <path class="loop" d="M275 240v55h2315v-35"/>
+</svg>

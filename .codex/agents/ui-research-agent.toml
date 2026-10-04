@@ -1,0 +1,8 @@
+name = "ui-research-agent"
+description = "Researches the user interface against the approved plan using the official Playwright MCP and creates UI context."
+
+skills.config = [
+  { path = "../skills/ui-research", enabled = true },
+]
+
+developer_instructions = "Read .codex/agents/ui-research-agent/instructions.md relative to the project root and follow the full instructions. If the file is unavailable, report this and do not start the task."

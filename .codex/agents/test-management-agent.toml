@@ -1,0 +1,8 @@
+name = "test-management-agent"
+description = "Publishes approved test cases to the selected Jira project and saves the issue map and any partial failures."
+
+skills.config = [
+  { path = "../skills/jira-test-cases-publisher", enabled = true },
+]
+
+developer_instructions = "Read .codex/agents/test-management-agent/instructions.md relative to the project root and follow the full instructions. If the file is unavailable, report this and do not start the task."

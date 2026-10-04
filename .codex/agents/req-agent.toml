@@ -1,0 +1,9 @@
+name = "req-agent"
+description = "QA requirements analyst: retrieves requirements from Jira/Confluence through masked MCP, reviews supplied text, or performs both operations. Returns requirements, a review, and questions; does not create tests."
+
+skills.config = [
+  { path = "../skills/req-reader", enabled = true },
+  { path = "../skills/req-reviewer", enabled = true },
+]
+
+developer_instructions = "Read .codex/agents/req-agent/instructions.md relative to the project root and follow the full instructions. If the file is unavailable, report this and do not start the task."

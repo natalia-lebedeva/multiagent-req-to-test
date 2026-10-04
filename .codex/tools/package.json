@@ -1,0 +1,18 @@
+{
+  "name": "req-to-test-mcp-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "pii-masking",
+    "jira-read-mcp",
+    "confluence-read-mcp"
+  ],
+  "scripts": {
+    "build": "npm run build -w @req-to-test/pii-masking && npm run build -w jira-read-mcp && npm run build -w confluence-read-mcp",
+    "test": "npm run test -w @req-to-test/pii-masking && npm run test -w jira-read-mcp && npm run test -w confluence-read-mcp",
+    "check": "npm run build && npm test",
+    "start:jira": "npm start -w jira-read-mcp",
+    "start:confluence": "npm start -w confluence-read-mcp"
+  }
+}
